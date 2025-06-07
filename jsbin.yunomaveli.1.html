@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by anonymous (http://jsbin.com/yunomaveli/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex" />
+  <title>Card Hover Preview</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .intro {
+      width: 35%;
+      padding: 2rem;
+      background: white;
+      border-right: 1px solid #ccc;
+    }
+
+    .intro h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .scroll-section {
+      flex: 1;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 2rem;
+      background: #fafafa;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .card {
+      display: inline-block;
+      width: 280px;
+      height: 600px;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .preview-box {
+      width: 100%;
+      height: 180px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      border-radius: 15px;
+    }
+
+    .preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover .preview-box img {
+      display: block;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-weight: bold;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .scroll-section::-webkit-scrollbar {
+      display: none;
+    }
+
+    .book-cover {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 왼쪽 소개 박스 -->
+    <div class="intro">
+      <img src="https://i.imgur.com/O3fZq64.jpeg" alt="책 표지" class="book-cover" />
+      <h1>거리의 초예술</h1>
+      <p>
+       저자: 김도시<br>
+        출판: 2025년 도시출판사
+      </p>
+      <p>
+         이 책은 도시의 숨겨진 구조물들을 탐색하며, 예술로 인식되지 못한 풍경을 발견해 나갑니다.
+        
+      </p>
+    </div>
+
+    <!-- 오른쪽 카드 스크롤 섹션 -->
+    <div class="scroll-section">
+      <div class="card">
+        <div class="preview-box">
+          <img src=https://i.imgur.com/5oZ7LIO_d.jpeg?maxwidth=520&shape=thumb&fidelity=high=Chapter+1" alt="Chapter 1">
+        </div>
+        <div class="card-content">
+          <h3>Chapter 1</h3>
+          <p>거리의 초예술을 찾아서</p>
+          <a href="#">More →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="preview-box">
+          <img src=https://i.imgur.com/g4gt1g3_d.jpeg?maxwidth=520&shape=thumb&fidelity=high=Chapter+2" alt="Chapter 2">
+        </div>
+        <div class="card-content">
+          <h3>Chapter 2</h3>
+          <p>토머슨의 흔적</p>
+          <a href=>More →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="preview-box">
+          <img src=https://i.imgur.com/7iwFer3_d.jpeg?maxwidth=520&shape=thumb&fidelity=high=Chapter+3" alt="Chapter 3">
+        </div>
+        <div class="card-content">
+          <h3>Chapter 3</h3>
+          <p>기억 속 계단</p>
+          <a href="#">More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
